@@ -90,6 +90,9 @@ public class Main {
 
             terminal.flush();
         }
+        public static void Annica (){
+            //Annica code
+        }
     }
 
 }
