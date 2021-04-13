@@ -12,7 +12,7 @@ public class Main {
         Terminal terminal = terminalFactory.createTerminal();
 
         char playerCharacter = '\u263a';
-        Position player = new Position(13,13);
+        Position player = new Position(13, 13);
         terminal.setCursorPosition(player.x, player.y);
         terminal.putCharacter(playerCharacter);
 
@@ -32,7 +32,8 @@ public class Main {
             while (keyStroke == null);
 
             Character c = keyStroke.getCharacter(); // used Character instead of char because it might be null
-            if (c == Character.valueOf('q')) { continueReadingInput = false;
+            if (c == Character.valueOf('q')) {
+                continueReadingInput = false;
                 System.out.println("quit");
             }
 
@@ -92,4 +93,8 @@ public class Main {
         }
     }
 
+    public static void patham() {
+    }
 }
+
+
