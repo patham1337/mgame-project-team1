@@ -1,3 +1,4 @@
+import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.input.KeyStroke;
 import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
 import com.googlecode.lanterna.terminal.Terminal;
@@ -5,22 +6,30 @@ import com.googlecode.lanterna.terminal.Terminal;
 import java.util.ArrayList;
 import java.util.List;
 
+
+
 public class Main {
 //håkan
     public static void main(String[] args) throws Exception {
+
         DefaultTerminalFactory terminalFactory = new DefaultTerminalFactory();
         Terminal terminal = terminalFactory.createTerminal();
 
         char playerCharacter = '\u263a';
+        terminal.setCursorVisible(false);
         Position player = new Position(13,13);
         terminal.setCursorPosition(player.x, player.y);
         terminal.putCharacter(playerCharacter);
 
+        Maze maze = new Maze(terminal);
+
+       /*
         List<Position> monsters = new ArrayList<>();
         monsters.add(new Position(3, 3));
         monsters.add(new Position(23, 23));
         monsters.add(new Position(23, 3));
         monsters.add(new Position(3, 23));
+*/
 
         boolean continueReadingInput = true;
         while (continueReadingInput) {
@@ -40,16 +49,28 @@ public class Main {
 
             switch (keyStroke.getKeyType()) {
                 case ArrowDown:
-                    player.y += 2;
+                    player.y += 1;
+                    if(player.y > 23 || maze.hitWall(player.x, player.y)) {
+                        player.y -= 1;
+                    }
                     break;
                 case ArrowUp:
-                    player.y -= 2;
+                    player.y -= 1;
+                    if(player.y < 0 || maze.hitWall(player.x, player.y)) {
+                        player.y += 1;
+                    }
                     break;
                 case ArrowRight:
-                    player.x += 2;
+                    player.x += 1;
+                    if(player.x > 79 || maze.hitWall(player.x, player.y)) {
+                        player.x -= 1;
+                    }
                     break;
                 case ArrowLeft:
-                    player.x -= 2;
+                    player.x -= 1;
+                    if(player.x < 0 || maze.hitWall(player.x, player.y)) {
+                        player.x += 1;
+                    }
                     break;
             }
 
@@ -57,8 +78,10 @@ public class Main {
             terminal.setCursorPosition(oldPosition.x, oldPosition.y);
             terminal.putCharacter(' ');
             terminal.setCursorPosition(player.x, player.y);
+            terminal.setForegroundColor(TextColor.ANSI.WHITE);
             terminal.putCharacter(playerCharacter);
 
+/*
             // Handle monsters
             for (Position monster : monsters) {
                 terminal.setCursorPosition(monster.x, monster.y);
@@ -79,6 +102,9 @@ public class Main {
                 terminal.putCharacter('X');
             }
 
+ */
+
+/*
             // Is the player alive?
             for (Position monster : monsters) {
                 if (monster.x == player.x && monster.y == player.y) {
@@ -87,6 +113,7 @@ public class Main {
                     System.out.println("GAME OVER!");
                 }
             }
+*/
 
             terminal.flush();
         }
