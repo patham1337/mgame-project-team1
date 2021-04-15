@@ -50,25 +50,25 @@ public class Main {
             switch (keyStroke.getKeyType()) {
                 case ArrowDown:
                     player.y += 1;
-                    if(player.y > 23 || maze.hitWall(player.x, player.y)) {
+                    if(player.y > 23 || maze.hitMaze(player.x, player.y)) {
                         player.y -= 1;
                     }
                     break;
                 case ArrowUp:
                     player.y -= 1;
-                    if(player.y < 0 || maze.hitWall(player.x, player.y)) {
+                    if(player.y < 0 || maze.hitMaze(player.x, player.y)) {
                         player.y += 1;
                     }
                     break;
                 case ArrowRight:
                     player.x += 1;
-                    if(player.x > 79 || maze.hitWall(player.x, player.y)) {
+                    if(player.x > 79 || maze.hitMaze(player.x, player.y)) {
                         player.x -= 1;
                     }
                     break;
                 case ArrowLeft:
                     player.x -= 1;
-                    if(player.x < 0 || maze.hitWall(player.x, player.y)) {
+                    if(player.x < 0 || maze.hitMaze(player.x, player.y)) {
                         player.x += 1;
                     }
                     break;
