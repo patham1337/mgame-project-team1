@@ -17,19 +17,19 @@ public class Main {
 
         char playerCharacter = '\u263a';
         terminal.setCursorVisible(false);
-        Position player = new Position(13,13);
+        Position player = new Position(3,3);
         terminal.setCursorPosition(player.x, player.y);
         terminal.putCharacter(playerCharacter);
 
         Maze maze = new Maze(terminal);
 
-       /*
+
         List<Position> monsters = new ArrayList<>();
-        monsters.add(new Position(3, 3));
+        //monsters.add(new Position(3, 3));
         monsters.add(new Position(23, 23));
         monsters.add(new Position(23, 3));
         monsters.add(new Position(3, 23));
-*/
+
 
         boolean continueReadingInput = true;
         while (continueReadingInput) {
@@ -81,7 +81,7 @@ public class Main {
             terminal.setForegroundColor(TextColor.ANSI.WHITE);
             terminal.putCharacter(playerCharacter);
 
-/*
+
             // Handle monsters
             for (Position monster : monsters) {
                 terminal.setCursorPosition(monster.x, monster.y);
@@ -102,7 +102,7 @@ public class Main {
                 terminal.putCharacter('X');
             }
 
- */
+
 
 /*
             // Is the player alive?
