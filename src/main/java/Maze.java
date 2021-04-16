@@ -13,12 +13,10 @@ public class Maze {
        terminal.setForegroundColor(TextColor.ANSI.GREEN);
 
        maze.add(new Wall(terminal, 1, 2, 25, 2)); //Linje 1 övre
-      // maze.add(new Wall(terminal, 1,5, 20, 5)); //Linje 1 nedre
        maze.add(new Wall(terminal, 1, 5, 5, 5)); //Linje 1 nedre
        maze.add(new Wall(terminal, 10, 5, 20, 5)); //Linje 1 nedre
 
        maze.add(new Wall(terminal, 20,5, 20, 15)); //Linje 2 vänster
-       //maze.add(new Wall(terminal, 25,2, 25, 12)); //Linje 2 höger
        maze.add(new Wall(terminal, 25,2, 25, 5)); //Ny rad
        maze.add(new Wall(terminal, 25,8, 25, 12)); //Ny rad
 

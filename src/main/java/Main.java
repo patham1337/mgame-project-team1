@@ -36,7 +36,7 @@ public class Main {
         //monsters.add(new Position(3, 3));
         //monsters.add(new Position(23, 23));
         //monsters.add(new Position(23, 3));
-        monsters.add(new Position(40, 10));
+        monsters.add(new Position(40, 22));
 
 
         boolean continueReadingInput = true;
@@ -112,26 +112,26 @@ public class Main {
                     monster.x++;
                     if(maze.hitMaze(monster.x, monster.y)) {
                         monster.x = 40;
-                        monster.y = 10;
+                        monster.y = 22;
                     }
                 } else if (player.x < monster.x) {
                     monster.x--;
                     if(maze.hitMaze(monster.x, monster.y)) {
                         monster.x = 40;
-                        monster.y = 10;
+                        monster.y = 6;
                     }
                 }
                 if (player.y > monster.y) {
                     monster.y++;
                     if(maze.hitMaze(monster.x, monster.y)) {
                         monster.x = 40;
-                        monster.y = 10;
+                        monster.y = 22;
                     }
                 } else if (player.y < monster.y) {
                     monster.y--;
                     if(maze.hitMaze(monster.x, monster.y)) {
                         monster.x = 40;
-                        monster.y = 10;
+                        monster.y = 6;
                     }
                 }
 
