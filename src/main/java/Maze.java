@@ -10,10 +10,13 @@ public class Maze {
 
    public Maze(Terminal terminal) throws IOException {
        terminal.setForegroundColor(TextColor.ANSI.GREEN);
-       maze.add(new Wall(terminal, 1, 2, 45, 2));
-       maze.add(new Wall(terminal, 1,5, 40, 5));
-       maze.add(new Wall(terminal, 40,5, 40, 20));
-       maze.add(new Wall(terminal, 45,2, 45, 20));
+       maze.add(new Wall(terminal, 55, 2, 75, 2));
+       maze.add(new Wall(terminal, 60,4, 70, 4));
+       maze.add(new Wall(terminal, 70,4, 70, 20));
+       maze.add(new Wall(terminal, 75,2, 75, 20));
+       maze.add(new Wall(terminal, 55,2, 55, 20));
+       maze.add(new Wall(terminal, 60,4, 60, 25));
+
        terminal.flush();
    }
    
