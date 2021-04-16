@@ -17,6 +17,23 @@ public class Maze {
        maze.add(new Wall(terminal, 55,2, 55, 20));
        maze.add(new Wall(terminal, 60,4, 60, 25));
 
+       maze.add(new Wall(terminal, 1,5, 20, 5)); //Linje 1 övre
+       maze.add(new Wall(terminal, 1, 2, 25, 2)); //Linje 1 nedre
+       maze.add(new Wall(terminal, 20,5, 20, 15)); //Linje 2 vänster
+       maze.add(new Wall(terminal, 25,2, 25, 12)); //Linje 2 höger
+
+       maze.add(new Wall(terminal, 25,12, 35, 12)); //Linje 3 övre
+       maze.add(new Wall(terminal, 20,15, 30, 15)); //Linje 3 nedre
+       maze.add(new Wall(terminal, 30,15, 30, 23)); //Linje 4 vänster
+       maze.add(new Wall(terminal, 35,12, 35, 20)); //Linje 4 höger
+
+       maze.add(new Wall(terminal, 35,20, 45, 20)); //Linje 5 övre
+       maze.add(new Wall(terminal, 30,23, 45, 23)); //Linje 5 nedre
+    //   maze.add(new Wall(terminal, 30,15, 30, 25)); //Linje 4 vänster
+    //   maze.add(new Wall(terminal, 35,12, 35, 20)); //Linje 4 höger
+
+
+
        terminal.flush();
    }
    
