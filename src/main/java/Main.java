@@ -93,6 +93,7 @@ public class Main {
     }
     public static void Rebecca(){
         //Rebecca code
+        int y = 5;
     }
 
 }
