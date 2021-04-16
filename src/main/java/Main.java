@@ -155,9 +155,5 @@ public class Main {
             terminal.flush();
         }
     }
-    public static void Rebecca(){
-        //Rebecca code
-        int y = 5;
-    }
 
 }
