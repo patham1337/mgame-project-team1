@@ -9,7 +9,7 @@ import java.util.List;
 
 
 public class Main {
-//håkan
+
     public static void main(String[] args) throws Exception {
         char block = '\u2588';
 
@@ -33,9 +33,6 @@ public class Main {
 
 
         List<Position> monsters = new ArrayList<>();
-        //monsters.add(new Position(3, 3));
-        //monsters.add(new Position(23, 23));
-        //monsters.add(new Position(23, 3));
         monsters.add(new Position(40, 22));
 
 
@@ -96,8 +93,6 @@ public class Main {
                 terminal.bell();
                 System.out.println("GAME OVER! YOU ARE THE WINNER!");
             }
-
-
 
 
 
