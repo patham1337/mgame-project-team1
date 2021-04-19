@@ -12,38 +12,39 @@ public class Maze {
    public Maze(Terminal terminal) throws IOException {
        terminal.setForegroundColor(TextColor.ANSI.GREEN);
 
-       maze.add(new Wall(terminal, 1, 2, 25, 2)); //Linje 1 övre
-       maze.add(new Wall(terminal, 1, 5, 5, 5)); //Linje 1 nedre
+       maze.add(new Wall(terminal, 1, 2, 25, 2)); //Horisontell  1 övre okej
+       maze.add(new Wall(terminal, 1, 5, 5, 5)); //Horisontell 1 nedre okej
        maze.add(new Wall(terminal, 10, 5, 20, 5)); //Linje 1 nedre
 
-       maze.add(new Wall(terminal, 20,5, 20, 15)); //Linje 2 vänster
-       maze.add(new Wall(terminal, 25,2, 25, 5)); //Ny rad
-       maze.add(new Wall(terminal, 25,8, 25, 12)); //Ny rad
+       maze.add(new Wall(terminal, 20,6, 20, 14)); //Vertikal 3 ändrad
+       maze.add(new Wall(terminal, 25,3, 25, 5)); //Övre vertikal 1 ändrad
+       maze.add(new Wall(terminal, 25,9, 25, 11)); //Vertikal höger
 
-       maze.add(new Wall(terminal, 25,12, 35, 12)); //Linje 3 övre
+       maze.add(new Wall(terminal, 25,12, 35, 12)); //Horisontell
        maze.add(new Wall(terminal, 20,15, 30, 15)); //Linje 3 nedre
-       maze.add(new Wall(terminal, 30,15, 30, 23)); //Linje 4 vänster
-       maze.add(new Wall(terminal, 35,12, 35, 20)); //Linje 4 höger
+       maze.add(new Wall(terminal, 30,16, 30, 16)); //Vertikal kort
+       maze.add(new Wall(terminal, 30,21, 30, 22));//Vertikal kort
+       maze.add(new Wall(terminal, 35,13, 35, 19)); //Vertikal höger
 
        maze.add(new Wall(terminal, 35,20, 55, 20)); //Linje 5 övre
        maze.add(new Wall(terminal, 30,23, 60, 23)); //Linje 5 nedre
 
-       maze.add(new Wall(terminal, 55, 2, 75, 2));
+       maze.add(new Wall(terminal, 56, 2, 75, 2)); //Horintell 3 övre
        maze.add(new Wall(terminal, 60,4, 70, 4));
-       maze.add(new Wall(terminal, 70,4, 70, 20));
-       maze.add(new Wall(terminal, 75,2, 75, 20));
+       maze.add(new Wall(terminal, 70,5, 70, 20));
+       maze.add(new Wall(terminal, 75,3, 75, 20));
        //maze.add(new Wall(terminal, 55,2, 55, 20));
-       maze.add(new Wall(terminal, 55,2, 55, 5));//Ny rad
-       maze.add(new Wall(terminal, 55,8, 55, 20)); //Ny rad
+       maze.add(new Wall(terminal, 55,2, 55, 4));//Vertikal övre 2
+       maze.add(new Wall(terminal, 55,9, 55, 19)); //Vertikal vänster
 
-       maze.add(new Wall(terminal, 60,4, 60, 25));
+       maze.add(new Wall(terminal, 60,5, 60, 24));
 
        //Nya rader
-       maze.add(new Wall(terminal, 25,5, 55, 5)); //Linje övre
+       maze.add(new Wall(terminal, 25,5, 55, 5)); //Horisontell övre 2 ändrad
        maze.add(new Wall(terminal, 25, 8, 55, 8)); //Linje nedre
 
-       maze.add(new Wall(terminal, 5,5, 5, 20)); //Linje vänster
-       maze.add(new Wall(terminal, 10,5, 10, 17)); //Linje höger
+       maze.add(new Wall(terminal, 5,6, 5, 19)); //Vertikal 1 vänster
+       maze.add(new Wall(terminal, 10,6, 10, 16)); //Vertikal 1 höger
 
        maze.add(new Wall(terminal, 10, 17, 30, 17)); //Linje övre
        maze.add(new Wall(terminal, 5,20, 30, 20)); //Linje  nedre
