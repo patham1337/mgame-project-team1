@@ -83,7 +83,6 @@ public class Monster {
                 }
             }
 
-
             if (oldMonsterPositionX < x) {
                 if (maze.isVertical()) {
                     directionX = false;
@@ -109,25 +108,6 @@ public class Monster {
             }
         }
 
-
-
-/*
-if(this.x > 79 || maze.hitMaze(this.x, this.y)) {
-            this.x -= 1;
-            directionX = !directionX;
-
-        if(this.x <  0 || maze.hitMaze(this.x, this.y)) {
-            this.x += 1;
-            directionX = !directionX;
-
-         if(this.y > 23 || maze.hitMaze(this.x, this.y)) {
-            this.y -= 1;
-            directionY = !directionY;
-
-         if(this.y < 0 || maze.hitMaze(this.x, this.y)) {
-            this.y += 1;
-            directionY = !directionY;
- */
 
         if (maze.hitMaze(this.x, this.y) == true) {
             terminal.setCursorPosition(x, y);

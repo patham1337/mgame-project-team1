@@ -2,16 +2,9 @@ import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.input.KeyStroke;
 import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
 import com.googlecode.lanterna.terminal.Terminal;
-
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
-
-
 public class Main {
-    //Nu testar vi lite
-
 
     public static void main(String[] args) throws Exception {
 
@@ -36,21 +29,6 @@ public class Main {
         terminal.flush();
 
         Monster monster = new Monster(terminal, rand.nextInt(79),rand.nextInt(23));
-        //  monster.move(terminal, maze);
-        //  monster.move(terminal, maze);
-        //  monster.move(terminal, maze);
-        //  monster.move(terminal, maze);
-
-
-
-
-       /*
-        List<Position> monsters = new ArrayList<>();
-        monsters.add(new Position(3, 3));
-        monsters.add(new Position(23, 23));
-        monsters.add(new Position(23, 3));
-        monsters.add(new Position(3, 23));
-*/
 
         boolean continueReadingInput = true;
         while (continueReadingInput) {
@@ -58,14 +36,14 @@ public class Main {
 
             do {
                 keyStroke = terminal.pollInput();
-                Thread.sleep(100); // might throw InterruptedException
+                Thread.sleep(100);
                 int x = player.x;
                 int y = player.y;
                 monster.move(terminal, maze, x, y);
             }
             while (keyStroke == null);
 
-            Character c = keyStroke.getCharacter(); // used Character instead of char because it might be null
+            Character c = keyStroke.getCharacter();
             if (c == Character.valueOf('q')) { continueReadingInput = false;
                 System.out.println("quit");
             }
@@ -114,46 +92,11 @@ public class Main {
                 System.out.println("GAME OVER! YOU ARE THE WINNER!");
             }
 
-/*
-            // Handle monsters
-            for (Position monster : monsters) {
-                terminal.setCursorPosition(monster.x, monster.y);
-                terminal.putCharacter(' ');
-
-                if (player.x > monster.x) {
-                    monster.x++;
-                } else if (player.x < monster.x) {
-                    monster.x--;
-                }
-                if (player.y > monster.y) {
-                    monster.y++;
-                } else if (player.y < monster.y) {
-                    monster.y--;
-                }
-
-                terminal.setCursorPosition(monster.x, monster.y);
-                terminal.putCharacter('X');
-            }
-
- */
-
-
             if (monster.x == player.x && monster.y == player.y) {
                 continueReadingInput = false;
                 terminal.bell();
                 System.out.println("GAME OVER!");
             }
-
-/*
-            // Is the player alive?
-            for (Monster monster : monsters) {
-                if (monster.x == player.x && monster.y == player.y) {
-                    continueReadingInput = false;
-                    terminal.bell();
-                    System.out.println("GAME OVER!");
-                }
-            }
-*/
 
             terminal.flush();
         }
