@@ -39,10 +39,12 @@ public class Maze {
         maze.add(new Wall(terminal, 70,5, 70, 20));
         maze.add(new Wall(terminal, 75,3, 75, 20));
         maze.add(new Wall(terminal, 55,2, 55, 4));
-        maze.add(new Wall(terminal, 55,9, 55, 19));
+        maze.add(new Wall(terminal, 55,9, 55, 13));
+        maze.add(new Wall(terminal, 55,15, 55, 19));
         maze.add(new Wall(terminal, 60,5, 60, 24));
         maze.add(new Wall(terminal, 5,6, 5, 19));
-        maze.add(new Wall(terminal, 10,6, 10, 16));
+        maze.add(new Wall(terminal, 10,6, 10, 8));
+        maze.add(new Wall(terminal, 10,10, 10, 16));
 
         terminal.flush();
     }
