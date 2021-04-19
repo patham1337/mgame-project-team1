@@ -10,7 +10,9 @@ import java.util.Random;
 
 
 public class Main {
-    //håkan
+    //Nu testar vi lite
+
+
     public static void main(String[] args) throws Exception {
 
         char block = '\u2588';
