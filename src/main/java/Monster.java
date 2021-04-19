@@ -23,14 +23,10 @@ public class Monster {
 
 
 
-    public void move(Terminal terminal, Maze maze, int playerx ,int playery) throws IOException {
+    public void move(Terminal terminal, Maze maze, int xx ,int yx) throws IOException {
 
         int oldMonsterPositionX;
         int oldMonsterPositionY;
-
-        if(playerx == this.x && playery == this.y) {
-            GameOver.isGameOver = true;
-        }
 
         oldMonsterPositionX = this.x;
         oldMonsterPositionY = this.y;
@@ -149,4 +145,3 @@ if(this.x > 79 || maze.hitMaze(this.x, this.y)) {
 
 
 }
-

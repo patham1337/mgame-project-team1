@@ -1,9 +1,6 @@
 import com.googlecode.lanterna.terminal.Terminal;
 
 import java.io.IOException;
-import com.googlecode.lanterna.terminal.Terminal;
-
-import java.io.IOException;
 import java.util.ArrayList;
 
 

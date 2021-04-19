@@ -10,7 +10,7 @@ import java.util.Random;
 
 
 public class Main {
-
+    //håkan
     public static void main(String[] args) throws Exception {
 
         char block = '\u2588';
@@ -57,9 +57,9 @@ public class Main {
             do {
                 keyStroke = terminal.pollInput();
                 Thread.sleep(100); // might throw InterruptedException
-                int playerx = player.x;
-                int playery = player.y;
-                monster.move(terminal, maze, playerx, playery);
+                int x = player.x;
+                int y = player.y;
+                monster.move(terminal, maze, x, y);
             }
             while (keyStroke == null);
 
@@ -142,15 +142,8 @@ public class Main {
                 System.out.println("GAME OVER!");
             }
 
-
-            if(GameOver.isGameOver == true) {
-                continueReadingInput = false;
-                terminal.bell();
-                System.out.println("GAME OVER!");
-            }
 /*
             // Is the player alive?
-            if(Ga
             for (Monster monster : monsters) {
                 if (monster.x == player.x && monster.y == player.y) {
                     continueReadingInput = false;
