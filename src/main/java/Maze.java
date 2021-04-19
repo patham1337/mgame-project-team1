@@ -6,8 +6,10 @@ import java.util.ArrayList;
 
 public class Maze {
 
+    static ArrayList<Wall> maze  = new ArrayList();
+    static boolean vertical;
+    static boolean horizontal;
 
-   static ArrayList<Wall> maze  = new ArrayList();
 
    public Maze(Terminal terminal) throws IOException {
        terminal.setForegroundColor(TextColor.ANSI.GREEN);

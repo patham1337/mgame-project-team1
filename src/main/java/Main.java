@@ -5,20 +5,23 @@ import com.googlecode.lanterna.terminal.Terminal;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 
 
 public class Main {
 
     public static void main(String[] args) throws Exception {
+
         char block = '\u2588';
 
         DefaultTerminalFactory terminalFactory = new DefaultTerminalFactory();
         Terminal terminal = terminalFactory.createTerminal();
+        Random rand = new Random();
 
         char playerCharacter = '\u263a';
         terminal.setCursorVisible(false);
-        Position player = new Position(3,3);
+        Position player = new Position(2,3);
         terminal.setCursorPosition(player.x, player.y);
         terminal.putCharacter(playerCharacter);
 
@@ -30,11 +33,22 @@ public class Main {
         terminal.putCharacter(block);
         terminal.flush();
 
+        Monster monster = new Monster(terminal, rand.nextInt(79),rand.nextInt(23));
+        //  monster.move(terminal, maze);
+        //  monster.move(terminal, maze);
+        //  monster.move(terminal, maze);
+        //  monster.move(terminal, maze);
 
 
+
+
+       /*
         List<Position> monsters = new ArrayList<>();
-        monsters.add(new Position(40, 22));
-
+        monsters.add(new Position(3, 3));
+        monsters.add(new Position(23, 23));
+        monsters.add(new Position(23, 3));
+        monsters.add(new Position(3, 23));
+*/
 
         boolean continueReadingInput = true;
         while (continueReadingInput) {
@@ -42,6 +56,10 @@ public class Main {
 
             do {
                 keyStroke = terminal.pollInput();
+                Thread.sleep(100); // might throw InterruptedException
+                int playerx = player.x;
+                int playery = player.y;
+                monster.move(terminal, maze, playerx, playery);
             }
             while (keyStroke == null);
 
@@ -94,58 +112,53 @@ public class Main {
                 System.out.println("GAME OVER! YOU ARE THE WINNER!");
             }
 
-
-
+/*
             // Handle monsters
             for (Position monster : monsters) {
                 terminal.setCursorPosition(monster.x, monster.y);
                 terminal.putCharacter(' ');
 
-
-
                 if (player.x > monster.x) {
                     monster.x++;
-                    if(maze.hitMaze(monster.x, monster.y)) {
-                        monster.x = 40;
-                        monster.y = 22;
-                    }
                 } else if (player.x < monster.x) {
                     monster.x--;
-                    if(maze.hitMaze(monster.x, monster.y)) {
-                        monster.x = 40;
-                        monster.y = 6;
-                    }
                 }
                 if (player.y > monster.y) {
                     monster.y++;
-                    if(maze.hitMaze(monster.x, monster.y)) {
-                        monster.x = 40;
-                        monster.y = 22;
-                    }
                 } else if (player.y < monster.y) {
                     monster.y--;
-                    if(maze.hitMaze(monster.x, monster.y)) {
-                        monster.x = 40;
-                        monster.y = 6;
-                    }
                 }
 
                 terminal.setCursorPosition(monster.x, monster.y);
                 terminal.putCharacter('X');
             }
 
+ */
 
 
+            if (monster.x == player.x && monster.y == player.y) {
+                continueReadingInput = false;
+                terminal.bell();
+                System.out.println("GAME OVER!");
+            }
 
+
+            if(GameOver.isGameOver == true) {
+                continueReadingInput = false;
+                terminal.bell();
+                System.out.println("GAME OVER!");
+            }
+/*
             // Is the player alive?
-            for (Position monster : monsters) {
+            if(Ga
+            for (Monster monster : monsters) {
                 if (monster.x == player.x && monster.y == player.y) {
                     continueReadingInput = false;
                     terminal.bell();
                     System.out.println("GAME OVER!");
                 }
             }
-
+*/
 
             terminal.flush();
         }
